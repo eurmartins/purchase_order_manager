@@ -57,6 +57,7 @@ class AuthController:
 
 
 auth_controller = AuthController()
+get_current_user = auth_controller.get_current_user
 
 
 @router.post("/login", response_model=JWTSchemas.Token)
@@ -65,5 +66,5 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db:
 
 
 @router.get("/me", response_model=UserSchemas.UserRead)
-def read_users_me(current_user: UserSchemas.UserRead = Depends(AuthController().get_current_user)):
+def read_users_me(current_user: UserSchemas.UserRead = Depends(get_current_user)):
     return current_user
