@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57d52060-dda6-41e3-898a-4f1c4d8d11f6" name="Changes" comment="refactor: update auth endpoints to use UserCRUD and UserSchemas namespace">
-      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilotDiffState.xml" afterDir="false" />
+    <list default="true" id="57d52060-dda6-41e3-898a-4f1c4d8d11f6" name="Changes" comment="chore: update IDE config files to reflect recent user and task changes">
+      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/endpoints/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/endpoints/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/auth.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +73,7 @@
       <workItem from="1759030660295" duration="129000" />
       <workItem from="1759030803023" duration="143000" />
       <workItem from="1759030959946" duration="391000" />
+      <workItem from="1759075083864" duration="723000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add UserRole enum to define user roles">
       <option name="closed" value="true" />
@@ -153,7 +155,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759036644291</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="refactor: update UserRole enum values to uppercase">
+      <option name="closed" value="true" />
+      <created>1759037810760</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1759037810760</updated>
+    </task>
+    <task id="LOCAL-00012" summary="chore: update IDE config files to reflect recent user and task changes">
+      <option name="closed" value="true" />
+      <created>1759037817918</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1759037817918</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +188,9 @@
     <MESSAGE value="refactor: encapsulate user CRUD operations in UserCRUD class" />
     <MESSAGE value="refactor: encapsulate user endpoint logic in UserController class and move db dependency to separate module" />
     <MESSAGE value="refactor: update auth endpoints to use UserCRUD and UserSchemas namespace" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: update auth endpoints to use UserCRUD and UserSchemas namespace" />
+    <MESSAGE value="refactor: update UserRole enum values to uppercase" />
+    <MESSAGE value="chore: update IDE config files to reflect recent user and task changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: update IDE config files to reflect recent user and task changes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Po_manager_FastApi$main.coverage" NAME="main Coverage Results" MODIFIED="1759030472293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
