@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/app/enums/roles.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/app/enums/roles.py" />
+              <option name="originalContent" value="import enum&#10;&#10;class UserRole(str, enum.Enum):&#10;    ADMIN = &quot;admin&quot;&#10;    USER = &quot;user&quot;&#10;    MANAGER = &quot;manager&quot;&#10;" />
+              <option name="updatedContent" value="import enum&#10;&#10;class UserRole(str, enum.Enum):&#10;    ADMIN = &quot;admin&quot;&#10;    USER = &quot;user&quot;&#10;    MANAGER = &quot;manager&quot;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
