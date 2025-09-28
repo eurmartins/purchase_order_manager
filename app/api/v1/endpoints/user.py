@@ -34,7 +34,8 @@ class UserController:
             raise HTTPException(status_code=400, detail="Username already registered")
         return user_crud.create_user(user)
 
-    def update_user_by_id(self, user_id: int, user: UserSchemas.UserUpdate, db: Session, current_user: UserSchemas.UserRead):
+    def update_user_by_id(self, user_id: int, user: UserSchemas.UserUpdate, db: Session,
+                          current_user: UserSchemas.UserRead):
         if current_user.id != user_id and current_user.role != UserRole.ADMIN:
             raise HTTPException(status_code=403, detail="Not enough permissions")
         user_crud = self.user_crud_class(db)
@@ -57,7 +58,8 @@ user_controller = UserController()
 
 
 @router.get("/{user_id}", response_model=UserSchemas.UserRead)
-def read_user(user_id: int, db: Session = Depends(get_db), current_user: UserSchemas.UserRead = Depends(get_current_user)):
+def read_user(user_id: int, db: Session = Depends(get_db),
+              current_user: UserSchemas.UserRead = Depends(get_current_user)):
     return user_controller.read_user(user_id, db, current_user)
 
 
@@ -72,10 +74,12 @@ def create_new_user(user: UserSchemas.UserCreate, db: Session = Depends(get_db))
 
 
 @router.put("/{user_id}", response_model=UserSchemas.UserRead)
-def update_user_by_id(user_id: int, user: UserSchemas.UserUpdate, db: Session = Depends(get_db), current_user: UserSchemas.UserRead = Depends(get_current_user)):
+def update_user_by_id(user_id: int, user: UserSchemas.UserUpdate, db: Session = Depends(get_db),
+                      current_user: UserSchemas.UserRead = Depends(get_current_user)):
     return user_controller.update_user_by_id(user_id, user, db, current_user)
 
 
 @router.delete("/{user_id}", response_model=UserSchemas.UserRead)
-def delete_user_by_id(user_id: int, db: Session = Depends(get_db), current_user: UserSchemas.UserRead = Depends(get_current_user)):
+def delete_user_by_id(user_id: int, db: Session = Depends(get_db),
+                      current_user: UserSchemas.UserRead = Depends(get_current_user)):
     return user_controller.delete_user_by_id(user_id, db, current_user)
