@@ -7,7 +7,7 @@ class UserSchemas:
     class UserBase(BaseModel):
         username: str
         email: str
-        role: UserRole = UserRole.USER
+        role: UserRole = UserRole.ASSISTENT
 
     class UserCreate(UserBase):
         password: str

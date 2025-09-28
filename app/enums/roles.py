@@ -3,5 +3,5 @@ import enum
 
 class UserRole(str, enum.Enum):
     ADMIN = "ADMIN"
-    USER = "USER"
-    MANAGER = "MANAGER"
+    ASSISTENT = "ASSISTENT"
+    ANALIST = "ANALIST"

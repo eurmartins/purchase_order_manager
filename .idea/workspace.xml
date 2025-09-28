@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57d52060-dda6-41e3-898a-4f1c4d8d11f6" name="Changes" comment="refactor: encapsulate authentication logic in AuthController class">
+    <list default="true" id="57d52060-dda6-41e3-898a-4f1c4d8d11f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/api/v1/endpoints/purchase_orders.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/crud/purchase_orders.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/enums/purchase_order_status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/purchase_orders.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/purchase_orders.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/v1/endpoints/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/endpoints/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/v1/endpoints/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/endpoints/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/enums/roles.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/enums/roles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +81,8 @@
       <workItem from="1759030660295" duration="129000" />
       <workItem from="1759030803023" duration="143000" />
       <workItem from="1759030959946" duration="391000" />
-      <workItem from="1759075083864" duration="1399000" />
+      <workItem from="1759075083864" duration="1476000" />
+      <workItem from="1759092542672" duration="4433000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add UserRole enum to define user roles">
       <option name="closed" value="true" />
@@ -193,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759076175137</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix: assign get_current_user to auth_controller instance for cleaner dependency injection">
+      <option name="closed" value="true" />
+      <created>1759076506086</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1759076506086</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +234,8 @@
     <MESSAGE value="chore: update workspace.xml to reflect recent changes in user and task tracking" />
     <MESSAGE value="refactor: encapsulate JWT-related schemas in JWTSchemas namespace" />
     <MESSAGE value="refactor: encapsulate authentication logic in AuthController class" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: encapsulate authentication logic in AuthController class" />
+    <MESSAGE value="fix: assign get_current_user to auth_controller instance for cleaner dependency injection" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: assign get_current_user to auth_controller instance for cleaner dependency injection" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Po_manager_FastApi$main.coverage" NAME="main Coverage Results" MODIFIED="1759030472293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
