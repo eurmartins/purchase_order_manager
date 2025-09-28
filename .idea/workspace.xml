@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57d52060-dda6-41e3-898a-4f1c4d8d11f6" name="Changes" comment="refactor: encapsulate user endpoint logic in UserController class and move db dependency to separate module">
-      <change beforePath="$PROJECT_DIR$/app/api/v1/endpoints/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/endpoints/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/user.py" afterDir="false" />
+    <list default="true" id="57d52060-dda6-41e3-898a-4f1c4d8d11f6" name="Changes" comment="refactor: update auth endpoints to use UserCRUD and UserSchemas namespace">
+      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilotDiffState.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759036441130</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="refactor: update auth endpoints to use UserCRUD and UserSchemas namespace">
+      <option name="closed" value="true" />
+      <created>1759036644291</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1759036644291</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +169,8 @@
     <MESSAGE value="refactor: group user schema classes under UserSchemas namespace" />
     <MESSAGE value="refactor: encapsulate user CRUD operations in UserCRUD class" />
     <MESSAGE value="refactor: encapsulate user endpoint logic in UserController class and move db dependency to separate module" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: encapsulate user endpoint logic in UserController class and move db dependency to separate module" />
+    <MESSAGE value="refactor: update auth endpoints to use UserCRUD and UserSchemas namespace" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: update auth endpoints to use UserCRUD and UserSchemas namespace" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Po_manager_FastApi$main.coverage" NAME="main Coverage Results" MODIFIED="1759030472293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
