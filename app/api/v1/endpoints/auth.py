@@ -3,24 +3,18 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from datetime import timedelta
 from app.schemas.auth import Token, UserLogin
-from app.schemas.user import UserRead
-from app.crud.user import get_user_by_username
+from app.schemas.user import UserSchemas
+from app.crud.user import UserCRUD
 from app.core.security import verify_password, create_access_token, verify_token
 from app.core.config import settings
-from app.db.session import SessionLocal
+from app.db.dependencies import get_db
 
 router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="api/v1/auth/login")
 
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-
 def authenticate_user(db: Session, username: str, password: str):
-    user = get_user_by_username(db, username)
+    user_crud = UserCRUD(db)
+    user = user_crud.get_user_by_username(username)
     if not user:
         return False
     if not verify_password(password, user.password_hash):
@@ -38,7 +32,8 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
     if username is None:
         raise credentials_exception
     
-    user = get_user_by_username(db, username=username)
+    user_crud = UserCRUD(db)
+    user = user_crud.get_user_by_username(username=username)
     if user is None:
         raise credentials_exception
     
@@ -59,6 +54,6 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db:
     )
     return {"access_token": access_token, "token_type": "bearer"}
 
-@router.get("/me", response_model=UserRead)
-def read_users_me(current_user: UserRead = Depends(get_current_user)):
+@router.get("/me", response_model=UserSchemas.UserRead)
+def read_users_me(current_user: UserSchemas.UserRead = Depends(get_current_user)):
     return current_user

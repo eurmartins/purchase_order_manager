@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57d52060-dda6-41e3-898a-4f1c4d8d11f6" name="Changes" comment="refactor: update UserRole import path and default value in user schema">
-      <change afterPath="$PROJECT_DIR$/app/db/dependencies.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/enums/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilotDiffState.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/endpoints/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/endpoints/user.py" afterDir="false" />
+    <list default="true" id="57d52060-dda6-41e3-898a-4f1c4d8d11f6" name="Changes" comment="refactor: encapsulate user endpoint logic in UserController class and move db dependency to separate module">
+      <change beforePath="$PROJECT_DIR$/app/api/v1/endpoints/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/endpoints/auth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/crud/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/enums/roles.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/enums/roles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +104,47 @@
       <option name="project" value="LOCAL" />
       <updated>1759033851544</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="chore: add empty __init__.py to mark package directory">
+      <option name="closed" value="true" />
+      <created>1759036318461</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1759036318461</updated>
+    </task>
+    <task id="LOCAL-00006" summary="style: remove unnecessary blank lines in roles.py">
+      <option name="closed" value="true" />
+      <created>1759036354935</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1759036354935</updated>
+    </task>
+    <task id="LOCAL-00007" summary="refactor: group user schema classes under UserSchemas namespace">
+      <option name="closed" value="true" />
+      <created>1759036376475</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1759036376475</updated>
+    </task>
+    <task id="LOCAL-00008" summary="refactor: encapsulate user CRUD operations in UserCRUD class">
+      <option name="closed" value="true" />
+      <created>1759036411073</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1759036411073</updated>
+    </task>
+    <task id="LOCAL-00009" summary="refactor: encapsulate user endpoint logic in UserController class and move db dependency to separate module">
+      <option name="closed" value="true" />
+      <created>1759036441130</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1759036441130</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,7 +155,12 @@
     <MESSAGE value="chore: update IDE configuration for Python SDK and auto import settings" />
     <MESSAGE value="chore: add Copilot diff state file to track pending diffs" />
     <MESSAGE value="refactor: update UserRole import path and default value in user schema" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: update UserRole import path and default value in user schema" />
+    <MESSAGE value="chore: add empty __init__.py to mark package directory" />
+    <MESSAGE value="style: remove unnecessary blank lines in roles.py" />
+    <MESSAGE value="refactor: group user schema classes under UserSchemas namespace" />
+    <MESSAGE value="refactor: encapsulate user CRUD operations in UserCRUD class" />
+    <MESSAGE value="refactor: encapsulate user endpoint logic in UserController class and move db dependency to separate module" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: encapsulate user endpoint logic in UserController class and move db dependency to separate module" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Po_manager_FastApi$main.coverage" NAME="main Coverage Results" MODIFIED="1759030472293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
