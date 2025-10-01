@@ -4,27 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57d52060-dda6-41e3-898a-4f1c4d8d11f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/v1/endpoints/status_order.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/crud/role.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/crud/status_order.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/role.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/status_order.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/role.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/schemas/status_order.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="57d52060-dda6-41e3-898a-4f1c4d8d11f6" name="Changes" comment="refactor: update PurchaseOrderSchemas to use status_id instead of PurchaseOrderStatus Enum">
       <change beforePath="$PROJECT_DIR$/app/api/v1/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/endpoints/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/endpoints/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/crud/purchase_orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/purchase_orders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/crud/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/crud/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/enums/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/endpoints/role.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/enums/purchase_order_status.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/enums/roles.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/purchase_orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/purchase_orders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/purchase_orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/purchase_orders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +89,7 @@
       <workItem from="1759118072682" duration="658000" />
       <workItem from="1759150816948" duration="17000" />
       <workItem from="1759153897207" duration="35000" />
-      <workItem from="1759275653389" duration="7748000" />
+      <workItem from="1759275653389" duration="8263000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add UserRole enum to define user roles">
       <option name="closed" value="true" />
@@ -285,36 +267,191 @@
       <option name="project" value="LOCAL" />
       <updated>1759097251743</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="chore: files idea">
+      <option name="closed" value="true" />
+      <created>1759283909910</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1759283909910</updated>
+    </task>
+    <task id="LOCAL-00024" summary="chore: add .gitignore to exclude IDE and environment files">
+      <option name="closed" value="true" />
+      <created>1759283933728</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1759283933728</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feat: add Role model with fields for roles table">
+      <option name="closed" value="true" />
+      <created>1759283950340</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1759283950340</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: add RoleSchemas for role management with Pydantic models">
+      <option name="closed" value="true" />
+      <created>1759283958219</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1759283958219</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: implement RoleCRUD class for role management operations">
+      <option name="closed" value="true" />
+      <created>1759283964969</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1759283964969</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: add RoleController for role management endpoints">
+      <option name="closed" value="true" />
+      <created>1759283973263</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1759283973263</updated>
+    </task>
+    <task id="LOCAL-00029" summary="remove: enum type roles.py">
+      <option name="closed" value="true" />
+      <created>1759284000505</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1759284000506</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat: add StatusOrder model for managing status orders in the database">
+      <option name="closed" value="true" />
+      <created>1759284029951</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1759284029951</updated>
+    </task>
+    <task id="LOCAL-00031" summary="feat: add StatusOrderSchemas for managing status order data with Pydantic models">
+      <option name="closed" value="true" />
+      <created>1759284041838</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1759284041838</updated>
+    </task>
+    <task id="LOCAL-00032" summary="feat: implement StatusOrderCRUD class for managing status orders in the database">
+      <option name="closed" value="true" />
+      <created>1759284050074</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1759284050074</updated>
+    </task>
+    <task id="LOCAL-00033" summary="feat: add StatusOrderController for managing status order operations with FastAPI">
+      <option name="closed" value="true" />
+      <created>1759284059191</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1759284059191</updated>
+    </task>
+    <task id="LOCAL-00034" summary="remove: delete enum type purchase_order_status.py">
+      <option name="closed" value="true" />
+      <created>1759284084601</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1759284084601</updated>
+    </task>
+    <task id="LOCAL-00035" summary="remove: delete __init__.py on enums package">
+      <option name="closed" value="true" />
+      <created>1759284113828</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1759284113828</updated>
+    </task>
+    <task id="LOCAL-00036" summary="refactor: update User model to use role_id foreign key instead of Enum for role">
+      <option name="closed" value="true" />
+      <created>1759284122528</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1759284122528</updated>
+    </task>
+    <task id="LOCAL-00037" summary="refactor: update UserSchemas to use role_id instead of UserRole Enum">
+      <option name="closed" value="true" />
+      <created>1759284133764</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1759284133764</updated>
+    </task>
+    <task id="LOCAL-00038" summary="refactor: update UserCRUD methods to use role_id instead of role">
+      <option name="closed" value="true" />
+      <created>1759284143183</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1759284143183</updated>
+    </task>
+    <task id="LOCAL-00039" summary="refactor: update user permission checks to use role name instead of UserRole Enum">
+      <option name="closed" value="true" />
+      <created>1759284162707</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1759284162707</updated>
+    </task>
+    <task id="LOCAL-00040" summary="refactor: update PurchaseOrder model to use status_id foreign key instead of Enum for status">
+      <option name="closed" value="true" />
+      <created>1759284207776</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1759284207776</updated>
+    </task>
+    <task id="LOCAL-00041" summary="refactor: update PurchaseOrderSchemas to use status_id instead of PurchaseOrderStatus Enum">
+      <option name="closed" value="true" />
+      <created>1759284213297</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1759284213297</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add UserRole enum to define user roles" />
-    <MESSAGE value="chore: update IDE configuration for Python SDK and auto import settings" />
-    <MESSAGE value="chore: add Copilot diff state file to track pending diffs" />
-    <MESSAGE value="refactor: update UserRole import path and default value in user schema" />
-    <MESSAGE value="chore: add empty __init__.py to mark package directory" />
-    <MESSAGE value="style: remove unnecessary blank lines in roles.py" />
-    <MESSAGE value="refactor: group user schema classes under UserSchemas namespace" />
-    <MESSAGE value="refactor: encapsulate user CRUD operations in UserCRUD class" />
-    <MESSAGE value="refactor: encapsulate user endpoint logic in UserController class and move db dependency to separate module" />
-    <MESSAGE value="refactor: update auth endpoints to use UserCRUD and UserSchemas namespace" />
-    <MESSAGE value="refactor: update UserRole enum values to uppercase" />
-    <MESSAGE value="chore: update IDE config files to reflect recent user and task changes" />
-    <MESSAGE value="chore: update workspace.xml to reflect recent changes in user and task tracking" />
-    <MESSAGE value="refactor: encapsulate JWT-related schemas in JWTSchemas namespace" />
-    <MESSAGE value="refactor: encapsulate authentication logic in AuthController class" />
-    <MESSAGE value="fix: assign get_current_user to auth_controller instance for cleaner dependency injection" />
     <MESSAGE value="refactor: update user roles to ASSISTENT and ANALIST, set ASSISTENT as default" />
     <MESSAGE value="style: format function signatures for improved readability in user endpoints" />
     <MESSAGE value="feat: add PurchaseOrder model and PurchaseOrderStatus enum for purchase order management" />
     <MESSAGE value="feat: add PurchaseOrderSchemas with base, create, read, and update models" />
     <MESSAGE value="feat: add PurchaseOrderCRUD class with CRUD operations for purchase orders" />
     <MESSAGE value="feat: add purchase order endpoints and integrate with API router" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add purchase order endpoints and integrate with API router" />
+    <MESSAGE value="chore: files idea" />
+    <MESSAGE value="chore: add .gitignore to exclude IDE and environment files" />
+    <MESSAGE value="feat: add Role model with fields for roles table" />
+    <MESSAGE value="feat: add RoleSchemas for role management with Pydantic models" />
+    <MESSAGE value="feat: implement RoleCRUD class for role management operations" />
+    <MESSAGE value="feat: add RoleController for role management endpoints" />
+    <MESSAGE value="remove: enum type roles.py" />
+    <MESSAGE value="feat: add StatusOrder model for managing status orders in the database" />
+    <MESSAGE value="feat: add StatusOrderSchemas for managing status order data with Pydantic models" />
+    <MESSAGE value="feat: implement StatusOrderCRUD class for managing status orders in the database" />
+    <MESSAGE value="feat: add StatusOrderController for managing status order operations with FastAPI" />
+    <MESSAGE value="remove: delete enum type purchase_order_status.py" />
+    <MESSAGE value="remove: delete __init__.py on enums package" />
+    <MESSAGE value="refactor: update User model to use role_id foreign key instead of Enum for role" />
+    <MESSAGE value="refactor: update UserSchemas to use role_id instead of UserRole Enum" />
+    <MESSAGE value="refactor: update UserCRUD methods to use role_id instead of role" />
+    <MESSAGE value="refactor: update user permission checks to use role name instead of UserRole Enum" />
+    <MESSAGE value="refactor: update PurchaseOrder model to use status_id foreign key instead of Enum for status" />
+    <MESSAGE value="refactor: update PurchaseOrderSchemas to use status_id instead of PurchaseOrderStatus Enum" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: update PurchaseOrderSchemas to use status_id instead of PurchaseOrderStatus Enum" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Po_manager_FastApi$main.coverage" NAME="main Coverage Results" MODIFIED="1759030472293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
