@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime
-from app.enums.purchase_order_status import PurchaseOrderStatus
+from app.schemas.status_order import StatusOrderSchemas
 
 
 class PurchaseOrderSchemas:
@@ -8,15 +8,21 @@ class PurchaseOrderSchemas:
         order_number: str
         assistant_id: int
         analyst_id: int
-        status: PurchaseOrderStatus = PurchaseOrderStatus.PENDING
+        status_id: int
         total_amount: float
         notes: str | None = None
 
     class PurchaseOrderCreate(PurchaseOrderBase):
         pass
 
-    class PurchaseOrderRead(PurchaseOrderBase):
+    class PurchaseOrderRead(BaseModel):
         id: int
+        order_number: str
+        assistant_id: int
+        analyst_id: int
+        status: StatusOrderSchemas.StatusOrderRead
+        total_amount: float
+        notes: str | None = None
         created_at: datetime
         updated_at: datetime
         approved_at: datetime | None = None
@@ -28,7 +34,7 @@ class PurchaseOrderSchemas:
         order_number: str | None = None
         assistant_id: int | None = None
         analyst_id: int | None = None
-        status: PurchaseOrderStatus | None = None
+        status_id: int | None = None
         total_amount: float | None = None
         notes: str | None = None
         approved_at: datetime | None = None
