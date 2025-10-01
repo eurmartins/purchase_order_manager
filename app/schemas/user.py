@@ -1,19 +1,22 @@
 from pydantic import BaseModel
 from datetime import datetime
-from app.enums.roles import UserRole
+from app.schemas.role import RoleSchemas
 
 
 class UserSchemas:
     class UserBase(BaseModel):
         username: str
         email: str
-        role: UserRole = UserRole.ASSISTENT
+        role_id: int
 
     class UserCreate(UserBase):
         password: str
 
-    class UserRead(UserBase):
+    class UserRead(BaseModel):
         id: int
+        username: str
+        email: str
+        role: RoleSchemas.RoleRead
         created_at: datetime
         updated_at: datetime
 
@@ -24,4 +27,4 @@ class UserSchemas:
         username: str | None = None
         email: str | None = None
         password: str | None = None
-        role: UserRole | None = None
+        role_id: int | None = None
