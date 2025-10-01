@@ -1,7 +1,7 @@
-from sqlalchemy import Column, Integer, String, DateTime, Enum, ForeignKey, Numeric, Text
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Numeric, Text
+from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from app.db.base import Base
-from app.enums.purchase_order_status import PurchaseOrderStatus
 
 
 class PurchaseOrder(Base):
@@ -10,7 +10,8 @@ class PurchaseOrder(Base):
     order_number = Column(String(50), unique=True, nullable=False)
     assistant_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     analyst_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    status = Column(Enum(PurchaseOrderStatus), nullable=False, default=PurchaseOrderStatus.PENDING)
+    status_id = Column(Integer, ForeignKey("status_orders.id"), nullable=False)
+    status = relationship("StatusOrder")
     total_amount = Column(Numeric(10, 2), nullable=False)
     notes = Column(Text)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
