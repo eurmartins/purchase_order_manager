@@ -4,6 +4,7 @@ from app.schemas.purchase_orders import PurchaseOrderSchemas
 
 
 class PurchaseOrderCRUD:
+
     def __init__(self, db: Session, purchase_order_schemas=PurchaseOrderSchemas):
         self.db = db
         self.purchase_order_schemas = purchase_order_schemas
@@ -19,7 +20,7 @@ class PurchaseOrderCRUD:
             order_number=order.order_number,
             assistant_id=order.assistant_id,
             analyst_id=order.analyst_id,
-            status=order.status,
+            status_id=order.status_id,
             total_amount=order.total_amount,
             notes=order.notes
         )
