@@ -3,7 +3,6 @@ from sqlalchemy.orm import Session
 from app.schemas.user import UserSchemas
 from app.crud.user import UserCRUD
 from app.api.v1.endpoints.auth import get_current_user
-from app.enums.roles import UserRole
 from app.db.dependencies import get_db
 
 router = APIRouter()
@@ -21,7 +20,7 @@ class UserController:
         return db_user
 
     def read_users(self, db: Session, current_user: UserSchemas.UserRead):
-        if current_user.role != UserRole.ADMIN:
+        if current_user.role.name != "ADMIN":
             raise HTTPException(status_code=403, detail="Not enough permissions")
         user_crud = self.user_crud_class(db)
         return user_crud.get_users()
@@ -35,8 +34,8 @@ class UserController:
         return user_crud.create_user(user)
 
     def update_user_by_id(self, user_id: int, user: UserSchemas.UserUpdate, db: Session,
-                          current_user: UserSchemas.UserRead):
-        if current_user.id != user_id and current_user.role != UserRole.ADMIN:
+                            current_user: UserSchemas.UserRead):
+        if current_user.id != user_id and current_user.role.name != "ADMIN":
             raise HTTPException(status_code=403, detail="Not enough permissions")
         user_crud = self.user_crud_class(db)
         db_user = user_crud.update_user(user_id, user)
@@ -45,7 +44,7 @@ class UserController:
         return db_user
 
     def delete_user_by_id(self, user_id: int, db: Session, current_user: UserSchemas.UserRead):
-        if current_user.role != UserRole.ADMIN:
+        if current_user.role.name != "ADMIN":
             raise HTTPException(status_code=403, detail="Not enough permissions")
         user_crud = self.user_crud_class(db)
         db_user = user_crud.delete_user(user_id)
@@ -59,7 +58,7 @@ user_controller = UserController()
 
 @router.get("/{user_id}", response_model=UserSchemas.UserRead)
 def read_user(user_id: int, db: Session = Depends(get_db),
-              current_user: UserSchemas.UserRead = Depends(get_current_user)):
+                current_user: UserSchemas.UserRead = Depends(get_current_user)):
     return user_controller.read_user(user_id, db, current_user)
 
 
@@ -75,11 +74,11 @@ def create_new_user(user: UserSchemas.UserCreate, db: Session = Depends(get_db))
 
 @router.put("/{user_id}", response_model=UserSchemas.UserRead)
 def update_user_by_id(user_id: int, user: UserSchemas.UserUpdate, db: Session = Depends(get_db),
-                      current_user: UserSchemas.UserRead = Depends(get_current_user)):
+                        current_user: UserSchemas.UserRead = Depends(get_current_user)):
     return user_controller.update_user_by_id(user_id, user, db, current_user)
 
 
 @router.delete("/{user_id}", response_model=UserSchemas.UserRead)
 def delete_user_by_id(user_id: int, db: Session = Depends(get_db),
-                      current_user: UserSchemas.UserRead = Depends(get_current_user)):
+                        current_user: UserSchemas.UserRead = Depends(get_current_user)):
     return user_controller.delete_user_by_id(user_id, db, current_user)
